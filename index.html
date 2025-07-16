@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+		<meta name="theme-color" content="#3367D6">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<link rel="manifest" href="manifest.json">
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/buttons.css" />
+		<link rel="stylesheet" type="text/css" href="css/page.css" />
+		<link rel="stylesheet" type="text/css" href="css/zen.css" />
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/element.js"></script>
+        <script type="text/javascript" src="js/handle.js"></script>
+		<script type="text/javascript" src="js/stages.js"></script>
+		<script type="text/javascript" src="js/solutions.js"></script>
+        <title>Zen-Triangle</title>
+    </head>
+	<body>
+		<script>
+			if ('serviceWorker' in navigator) {
+			  window.addEventListener('load', function() {
+				navigator.serviceWorker.register('sw.js');
+			  });
+			}
+		</script>
+	</body>
+</html>

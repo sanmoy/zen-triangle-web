@@ -1,0 +1,80 @@
+.buttonContainer{
+	background:url('../img/section_bg.png');
+	border:1px solid #F4F4F4;
+	margin:auto;
+	overflow:hidden;
+	opacity:1;
+	z-index:2;
+	
+	position: absolute;
+	
+	-moz-box-shadow:0 0 10px #C4C4C4;
+	-webkit-box-shadow:0 0 10px #C4C4C4;
+	box-shadow:0 0 10px #C4C4C4;
+	
+	transition-property: visibility, opacity;
+	transition-duration: 400ms, 400ms;
+	transition-timing-function: ease-in, ease-in;
+	transition-delay: 0s;
+	-webkit-transition-property:visibility, opacity;
+	-webkit-transition-duration:400ms, 400ms;
+	-webkit-transition-timing-function:ease-in, ease-in;
+	-webkit-transition-delay:0s;
+}
+
+.stageContainer{
+	background:url('../img/section_bg.png');
+	border:1px solid #F4F4F4;
+	margin:auto;
+	overflow:hidden;
+	opacity:1;
+	z-index:2;
+	
+	position: absolute;
+	
+	-moz-box-shadow:0 0 10px #C4C4C4;
+	-webkit-box-shadow:0 0 10px #C4C4C4;
+	box-shadow:0 0 10px #C4C4C4;
+}
+
+.stage
+{
+	border:2px solid;
+	/* Applying a default border raidus of 8px */
+	margin:auto;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	
+	/* A 1px highlight inside of the button */
+	
+	-moz-box-shadow:0 0 1px #fff inset;
+	-webkit-box-shadow:0 0 1px #fff inset;
+	box-shadow:0 0 1px #fff inset;
+	
+	position: absolute;
+	
+	top:0px;
+	bottom:0px;
+}
+
+.game
+{
+	-moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5) );
+	background:-moz-linear-gradient( center top, #79bbff 5%, #378de5 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5');
+	background-color:#79bbff;
+	text-indent:0;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	color: #0f4b6d !important;
+	font-family: myFont;
+	font-weight:bold;
+	font-style:normal;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #528ecc;
+}
