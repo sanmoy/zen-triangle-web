@@ -35,28 +35,28 @@
   "screenshots": 
   [ 
     {
-      "src": "/img/food-for-mind.jpg",
+      "src": "img/food-for-mind.jpg",
       "sizes": "1280x800",
       "type": "image/jpg",
       "form_factor": "wide", 
       "label": "A food for your mind"
     },
     {
-      "src": "/img/350-stages.jpg",
+      "src": "img/350-stages.jpg",
       "sizes": "1280x800",
       "type": "image/jpg",
       "form_factor": "wide", 
       "label": "Over 350 stages to play"
     },
     {
-      "src": "/img/easy.jpg",
+      "src": "img/easy.jpg",
       "sizes": "1280x800",
       "type": "image/jpg",
       "form_factor": "wide", 
       "label": "Easy stages to start with"
     },
     {
-      "src": "/img/tough.jpg",
+      "src": "img/tough.jpg",
       "sizes": "1280x800",
       "type": "image/jpg",
       "form_factor": "wide", 
