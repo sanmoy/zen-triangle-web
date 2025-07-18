@@ -62,7 +62,7 @@ var promptRate;
 
 var hintTime;
 var hintCount;
-const TIMESPAN_MS = 60 * 1000;
+const TIMESPAN_MS = 24 * 60 * 60 * 1000;
 
 window.onfocus = playLoop;
 window.onblur = pauseLoop;
@@ -97,6 +97,19 @@ function main() {
     //storePreference("lastPlayedTime", Date.now());
 //    setTimeout(initButton, 500);
 }
+
+// Define the function you want to call on resize
+function handleWindowResize() {
+    console.log("Window resized!");
+    window.location.href = window.location.href;
+}
+
+// Add the event listener
+window.addEventListener('resize', handleWindowResize);
+
+// Optional: You might want to call the function once on initial load too,
+// if its logic is relevant to the initial window size.
+// handleWindowResize();
 
 /* function promptWeeklyChallengeDialog()
 {

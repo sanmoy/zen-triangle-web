@@ -1,6 +1,7 @@
 {
   "name": "Zen Triangle",
   "short_name": "ZenTriangle",
+  "description": "A classic Triangle puzzle game",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -15,6 +16,58 @@
       "src": "img/icon_512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "img/icon_wide.png",
+      "sizes": "1024x590",
+      "type": "image/png",
+      "form_factor": "wide", 
+      "purpose": "any"
+    },
+    {
+      "src": "img/icon_narrow.webp",
+      "sizes": "360x540",
+      "type": "image/webp",
+      "form_factor": "narrow", 
+      "purpose": "any"
+    }
+  ],
+  "screenshots": 
+  [ 
+    {
+      "src": "/img/food-for-mind.jpg",
+      "sizes": "1280x800",
+      "type": "image/jpg",
+      "form_factor": "wide", 
+      "label": "A food for your mind"
+    },
+    {
+      "src": "/img/350-stages.jpg",
+      "sizes": "1280x800",
+      "type": "image/jpg",
+      "form_factor": "wide", 
+      "label": "Over 350 stages to play"
+    },
+    {
+      "src": "/img/easy.jpg",
+      "sizes": "1280x800",
+      "type": "image/jpg",
+      "form_factor": "wide", 
+      "label": "Easy stages to start with"
+    },
+    {
+      "src": "/img/tough.jpg",
+      "sizes": "1280x800",
+      "type": "image/jpg",
+      "form_factor": "wide", 
+      "label": "Tough stages to challenge you"
+    },
+    {
+      "src": "img/icon_narrow.webp",
+      "sizes": "360x540",
+      "type": "image/webp",
+      "form_factor": "narrow",  
+      "label": "Mouse playing puzzle"
     }
   ]
 }

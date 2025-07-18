@@ -87,6 +87,7 @@ function backHandler() {
         showCanvases();
         showHelp();
     } else if (glasses === "intutorial") {
+        fromTutorial = false;
 //        storePreference("silentZone", "false");
         setBackgroundImage1();
         clearInterval(ref);
