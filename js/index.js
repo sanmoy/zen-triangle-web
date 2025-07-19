@@ -888,3 +888,104 @@ function keyHandler(e) {
         return false;
     }
 }
+
+let deferredPrompt; // This variable will store the install prompt event
+
+// 1. Listen for the 'beforeinstallprompt' event
+// This event fires when the PWA is installable.
+// It allows you to defer the prompt and show your own button.
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent the default browser UI from showing the prompt immediately
+    // e.preventDefault();
+    // Store the event for later use
+    deferredPrompt = e;
+    console.log('beforeinstallprompt event fired.');
+
+    // 2. Show your custom "Install App" button (or make it visible)
+    // const installButton = document.getElementById('installButton');
+    // if (installButton) {
+    //     installButton.style.display = 'block'; // Or 'inline-block'
+    // }
+
+    // You can also log if the browser automatically shows the default UI (uncommon now for custom prompts)
+    // console.log(`'beforeinstallprompt' was fired.`, e);
+
+    var installContainer = document.getElementById('installContainer');
+    if (installContainer) {
+        installContainer.style.visibility = "visible";
+        // banner_box.style.opacity="1";
+    } else {
+        var installContainer = document.createElement("div");
+        installContainer.setAttribute("id", "installContainer");
+        installContainer.style.width = Math.round(3 * calib) + "px";
+        installContainer.style.height = Math.round(.8 * calib) + "px";
+        installContainer.style.zIndex = "5";
+        installContainer.style.right = "1%";
+        installContainer.style.bottom = "4%";
+        // if(ipad)
+        // {
+        // installContainer.style.top = "1.5%";
+        // }
+        // else
+        // {
+        // installContainer.style.top = "1.8%";
+        // }
+        installContainer.style.position = "absolute";
+
+        var installButton = document.createElement("div");
+        installButton.setAttribute("class", "img");
+        installButton.setAttribute("id", "installButton");
+        installButton.style.width = 3 * calib + "px";
+        installButton.style.height = Math.round(.8 * calib) + "px";
+        //        installButton.style.left = "2%";
+        //        installButton.style.top = "1.3%";
+        //        installButton.style.right = "initial";
+        installButton.style.bottom = "0";
+        installButton.style.cursor = 'pointer';
+        installButton.style.backgroundImage = "url('./img/install-app.png')";
+        //        installButton.style.zIndex = "5";
+        installContainer.appendChild(installButton);
+        document.body.insertBefore(installContainer, document.body.firstChild);
+        installContainer.style.visibility = "visible";
+
+        addEvent("installButton", installAppAction);
+    }
+});
+
+function installAppAction()
+{
+    if (deferredPrompt) {
+        deferredPrompt.prompt();
+
+        // No await, but still asynchronous
+        deferredPrompt.userChoice.then((result) => {
+            const outcome = result.outcome;
+            console.log(`User response to the install prompt: ${outcome}`);
+            // ... rest of code that depends on outcome, goes HERE inside this .then() block ...
+
+            // This is still asynchronous, so deferredPrompt = null;
+            // and desktopInstallButton.style.display = 'none';
+            // should also go here or in a function called from here.
+            deferredPrompt = null;
+            const installButton = document.getElementById('installButton');
+            
+
+            if (outcome === 'accepted') {
+                if (installButton) {
+                    installButton.style.display = 'none';
+                }
+                console.log('User accepted the PWA install.');
+            } else {
+                console.log('User dismissed the PWA install.');
+            }
+        }).catch(error => {
+            // Handle potential errors if the promise rejects
+            console.error("Error with userChoice Promise:", error);
+            deferredPrompt = null;
+            const installButton = document.getElementById('installButton');
+            if (installButton) {
+                installButton.style.display = 'none';
+            }
+        });
+    }
+}

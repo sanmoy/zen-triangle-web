@@ -169,7 +169,7 @@ function initButton() {
     createHintButton();
     showCanvases();
     //setTimeout(showMainMenu, 200);
-    setTimeout(startAnimation, 200);
+    // setTimeout(startAnimation, 200);
     animref = setTimeout(stopAnimation, 10000);
 //    }
 }
@@ -746,6 +746,7 @@ function helpAction() {
         glasses = "";
         var help_div = document.getElementById("help");
         hidemainMenu();
+        setTimeout(hideInstallButton, 400);
 		//playTutorialAction();
 //        showHelp();
 //        setTimeout(hidemainMenu, 400);
@@ -1889,6 +1890,7 @@ function nGameAction() {
         glasses = "";
         var ngame_div = document.getElementById("ngame");
         hidemainMenu();
+        setTimeout(hideInstallButton, 400);
         //var skipTutorial = getPreference("skipTutorial");
         if (skipTutorial === "true") 
 		{
@@ -2890,6 +2892,15 @@ function showBannerBox(stageNumber) {
         storePreference("lastPlayedGame", 1);
     }
 } */
+
+function hideInstallButton() {
+    var backContainer = document.getElementById('installContainer');
+    if (backContainer) {
+        backContainer.style.visibility = "hidden";
+        // setTimeout(function(){banner_box.style.visibility="hidden";},400);
+        // banner_box.style.opacity="0";
+    }
+}
 
 function hideBackButton() {
     var backContainer = document.getElementById('backContainer');

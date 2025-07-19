@@ -198,8 +198,8 @@ YellowElement = {
     },
 
     rotate: function rotate(angle) {
-        //this.angle=this.angle+angle;
-        //this.setPos(this.x,this.y);
+        this.angle=this.angle+angle;
+        this.setPos(this.x,this.y);
     },
 
     flipElement: function flipElement() {
