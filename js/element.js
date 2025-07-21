@@ -804,6 +804,17 @@ function checkOccupancy(elementArray) {
         //var pro = getPreference("pro");
         //var gameNumber = getPreference("gameNumber");
         gameNumber = parseInt(gameNumber);
+        if (stageStartTime) {
+            const timeSpentMs = Date.now() - stageStartTime;
+            const timeSpentSeconds = Math.round(timeSpentMs / 1000); // Convert to seconds
+
+            console.log(`Stage ${gameNumber} completed in ${timeSpentSeconds} seconds!`);
+            gtag('event', 'stage_completed', {
+                'stage_number': gameNumber,
+                'game_name': 'Zen Triangle',
+                'time_to_complete_seconds': timeSpentSeconds, // Custom parameter for time
+            });
+        }
         //last played game is basically the last playable game which is unlocked
         //var lastPlayedGame = getPreference("lastPlayedGame");
         lastPlayedGame = parseInt(lastPlayedGame);

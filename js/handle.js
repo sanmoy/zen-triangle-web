@@ -68,6 +68,7 @@ window.onfocus = playLoop;
 window.onblur = pauseLoop;
 
 firstMove = true;
+var stageStartTime; // To store the start time of a stage
 
 //this is to check whether the current flow is from tutorial
 var fromTutorial = false;
@@ -2828,6 +2829,12 @@ function increaseHint()
 
 function init(stageNumber) {
     glasses = "ingameplay";
+
+    stageStartTime = Date.now(); // Record current timestamp in milliseconds
+    gtag('event', 'stage_started', {
+        'stage_number': stageNumber,
+        'game_name': 'Zen Triangle'
+    });
 
 	increaseHint();
     showCanvases();
