@@ -3,37 +3,12 @@ function loadGame(game) {
 //    showAppiraterDialog();
     //var lastPlayedGame = getPreference("lastPlayedGame");
     lastPlayedGame = parseInt(lastPlayedGame);
-    /* if(gameNumber<=lastPlayedGame)
-    {
-        if(gameNumber == 80)
-        {
-            showAppiraterDialog();
-        }
-        else if(gameNumber == 120)
-        {
-            showAppiraterDialog();
-        }
-        else if(gameNumber == 160)
-        {
-            showAppiraterDialog();
-        }
-        else  */
+
 	if(game == 41 || game == 61 || game == 70 || game == 80 || game == 90)
 	{
-		/* var hintCount = getPreference("hintCount");
-		hintCount = parseInt(hintCount);
-		//if user has purchased hint
-		if(hintCount>2)
-		{ */
-			//showAppiraterDialog();
-		// }
 		showPromptRateDialog();
 	}
-    // }
-    // if(gameNumber>0)
-    // {
-        // setTimeout(registerNotification, 3000);
-    // }
+
 	gameNumber = game;
     //storePreference("gameNumber", gameNumber);
     //resetting all params before load a stage

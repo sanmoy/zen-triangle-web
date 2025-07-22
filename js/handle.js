@@ -84,8 +84,10 @@ var fromTutorial = false;
     storePreference("lastPlayedTime", Date.now());
 //    setTimeout(initButton, 500);
 }());*/
+
+// This is to check whether the code is running in Chrome EXTENSION
 var runninInChrome = false;
-// Inside my.js:
+
 document.addEventListener('DOMContentLoaded', function() {
   //console.log('here');
   main();
@@ -590,7 +592,7 @@ function setSoundTrue()
 	}
 	else
 	{
-		localStorage.setItem("", "true");
+		localStorage.setItem("sound", "true");
 	}
 	sound = "true";
 }
